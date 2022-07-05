@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/img/atom.jpg" type="image/x-icon" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-sm me-5">
+      <div class="mb-5" style="color: silver">
+        <h1>Star Wars Memory Game.</h1>
+        <h1>Sign up</h1>
+      </div>
+      <form
+        action="/api/signup"
+        class="needs-validation"
+        method="post"
+        novalidate
+      >
+        <div class="mb-3 position-relative">
+          <label class="form-label" for="username" style="color: white"
+            >Username</label
+          >
+          <input
+            class="form-control w-25"
+            id="username"
+            name="username"
+            placeholder="Your Name"
+            required
+          />
+          <div class="invalid-tooltip">The name is taken</div>
+        </div>
+        <div class="mb-3 position-relative">
+          <label class="form-label" for="inputPassword" style="color: white"
+            >Password</label
+          >
+          <input type="password" class="form-control w-25"" id="inputPassword"
+          placeholder="Password" required name="password">
+          <div class="invalid-tooltip">
+            Please enter your password to continue.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary">Sign up</button>
+      </form>
+
+      <!-- JavaScript for disabling form submissions if there are invalid fields -->
+      <script>
+        // Self-executing function
+        (function () {
+          "use strict";
+          window.addEventListener(
+            "load",
+            function () {
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.getElementsByClassName("needs-validation");
+
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(
+                forms,
+                function (form) {
+                  form.addEventListener(
+                    "submit",
+                    async function (event) {
+                      // if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                      // }
+                      form.classList.add("was-validated");
+
+                      try {
+                        const password =
+                          document.querySelector("#inputPassword").value;
+                        const username =
+                          document.querySelector("#username").value;
+                        const response = await fetch("/api/signup", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ username, password }),
+                        });
+                        const data = await response.json();
+                        window.location.replace("signin.html");
+                      } catch (e) {
+                        alert("Signup Failed. Try another username");
+                      }
+                    },
+                    false
+                  );
+                }
+              );
+            },
+            false
+          );
+        })();
+      </script>
+    </div>
+  </body>
+</html>

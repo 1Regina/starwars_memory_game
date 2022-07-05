@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/img/atom.jpg" type="image/x-icon" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="board"></div>
+    <div class="controls">
+      <select
+        class="select"
+        id="gameArt"
+        style="color: black; background: goldenrod"
+      >
+        <option
+          selected
+          value="characters"
+          style="color: goldenrod; background: black"
+        >
+          Characters
+        </option>
+        <option value="droids" style="color: goldenrod; background: black">
+          Droids
+        </option>
+      </select>
+      <button
+        class="start"
+        id="startButton"
+        style="
+          color: goldenrod;
+          background: black;
+          border-style: solid;
+          border-width: 2px;
+          border-color: goldenrod;
+        "
+      >
+        Start
+      </button>
+      <span id="timer">00</span>
+      <!-- <h1 style="color: white">Best Record</h1>     -->
+      <span
+        id="bestTimer"
+        style="
+          background-color: black;
+          color: goldenrod;
+          display: flex;
+          justify-content: center;
+        "
+      ></span>
+
+      <a class="btn btn-secondary" href="signin.html">Sign out</a>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
+  <footer>
+    <p
+      style="color: grey; margin-left: 2em; margin-bottom: 0px; font-size: 10px"
+    >
+      Music: Gypsy Jaxx 
+    </p>
+    <p style="color: grey; margin-left: 2em; font-size: 10px">
+      By: Johnny Boyle
+    </p>
+  </footer>
+</html>

@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  background: url("../img/background.jpg"); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+button.start,
+button.restart {
+  border: 2px solid #daa520;
+  outline: none;
+  padding: 14px 62px;
+  color: #37d5d6;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color:	#F0F8FF;
+  cursor: pointer;
+}
+button.restart {
+  background-color: #daa520;
+  border: 2px solid #f5f5f5;
+}
+.controls > span {
+  padding: 15px;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #daa520;
+  border: 2px solid #daa520;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.board.win {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #37d5d6;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  border: 2px solid #daa520;
+}
+.board.prevent-click {
+  pointer-events: none;
+}
+.board .card {
+  height: 180px;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+.board .card .front {
+  background-color: #f5f5f5;
+  line-height: 200px;
+}
+.board .card .front:before {
+  content: "";
+  background: url("../img/atom.jpg") no-repeat center center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.board .card .back {
+  transform: rotateY(180deg);
+}
+.board .card .back img {
+  width: 100%;
+}
+.board .card .front,
+.board .card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 2px solid #daa520;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.board .card.flipped,
+.board .card.matched {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+select {
+  background-color: #f5f5f5;
+  border: 2px solid #daa520;
+  color: #37d5d6;
+  padding: 20px 60px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
