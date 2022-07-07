@@ -86,9 +86,17 @@
                           body: JSON.stringify({ username, password }),
                         });
                         const data = await response.json();
-                        window.location.replace("signin.html");
+                        console.log(`sine errir`, response.status);
+                        console.log(`sine errir`, data);
+                        if (response.status === 500) {
+                          window.location.replace("signup.html");
+                          alert("Signup Failed. Try another username");
+                        } else {
+                          window.location.replace("signin.html");
+                        }
                       } catch (e) {
-                        alert("Signup Failed. Try another username");
+                        alert("There is an error");
+                        console.log(e);
                       }
                     },
                     false

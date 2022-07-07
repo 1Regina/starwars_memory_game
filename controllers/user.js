@@ -16,7 +16,7 @@ exports.signup = async (req, res) => {
       .insert(
         [
           {
-            username: `${req.body.username}`,
+            username: `${req.body.username}`.toLowerCase(),
             password: hashedPassword,
           },
         ],
@@ -25,7 +25,7 @@ exports.signup = async (req, res) => {
       .into("users");
     res.json({ returnId });
   } catch (err) {
-    console.log(err);
+    console.log(err.toString());
     res.status(500).json({
       errMsg: err.toString(),
     });
@@ -39,7 +39,7 @@ exports.signin = async (req, res) => {
     // const saltRounds = parseInt(process.env.SALTROUNDS);
     // const hashedPassword = await bcrypt.hash(inputPassword, saltRounds);
     const users = await knex("users").where({
-      username: `${req.body.username}`,
+      username: `${req.body.username}`.toLowerCase(),
     });
     // .select("password");
     // console.log(`the user:`, users, inputPassword);
