@@ -1,5 +1,10 @@
-## Database
+## Summary: 
+A memory game with Star Wars theme for individuals. The game allows you to choose between some of my favourite Characters or the often overlooked Droids heroes like NED-8, AZI-3, IG-11. 
+There are constraints check for no duplicate users. 
+Upon successful signin, your personal best score to date will be displayed. If you beat your record, the best score will be updated. Otherwise the old record will remain.
+Enjoy the music too! 
 
+## Database
 
 ###
 
@@ -23,10 +28,3 @@ node db/seed/index.js
 Droid View         |  Character Views | Game Cover
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](views/characters.jpg)  |  ![](views/droids.jpg)|  ![](views/start.jpg)
-
-
-<p float="center">
-  <img src="views/characters.jp" width="100" />
-  <img src="views/droids.jpg" width="100" /> 
-  <img src="views/start.jpg" width="100" />
-</p>
