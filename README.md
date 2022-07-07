@@ -4,6 +4,9 @@ There are constraints check for no duplicate users.
 Upon successful signin, your personal best score to date will be displayed. If you beat your record, the best score will be updated. Otherwise the old record will remain.
 Enjoy the music too! 
 
+## Have fun!
+[Play here](http://memory-game.1regina.com:8080/signin.html)
+
 ## Database
 
 ###
