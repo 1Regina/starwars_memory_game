@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const dotenv = require("dotenv");
 const app = express();
-const port = 8080;
+const port = 80;
 
 app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
