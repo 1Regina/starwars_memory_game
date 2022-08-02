@@ -85,7 +85,8 @@ function startGame() {
   startButton.remove();
   tm1 = setInterval(() => {
     let timeLeft = parseInt(timer.textContent) + 1;
-    timer.textContent = timeLeft < 10 ? `0${timeLeft}` : timeLeft;
+    // timer.textContent = timeLeft < 10 ? `0${timeLeft}` : timeLeft;
+    timer.textContent = timeLeft
   }, 1000);
 }
 
